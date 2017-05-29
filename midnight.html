@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+}
+</style>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var x = setInterval(function() {
+
+    var d = new Date();
+    var x = document.getElementById("demo");
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    var total = (23-h) * 3600 + (59-m) * 60 + (59-s)
+    x.innerHTML = "The new day starts in " + total + " seconds"
+
+    if (total < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = total;
+    }
+	
+}, 1000);
+</script>
+
+<p style="position: fixed; font-size: 20px; bottom: 0; width:100%; text-align: center"> Made with ♥ by ggCurly </p>
+</body>
+</html>
